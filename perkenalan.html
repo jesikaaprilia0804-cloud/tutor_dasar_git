@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perkenalan Sederhana</title>
+  <style>
+    :root{--bg:#f3f4f6;--card:#ffffff;--accent:#2563eb;--text:#0f172a}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#e6eefc);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:720px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(15,23,42,0.12);
+      padding:28px;
+      text-align:center;
+    }
+    .avatar{
+      width:96px;height:96px;border-radius:50%;display:inline-block;
+      background:linear-gradient(135deg,var(--accent),#7dd3fc);
+      color:white;font-weight:700;font-size:28px;line-height:96px;margin-bottom:12px
+    }
+    h1{margin:6px 0 8px;font-size:20px}
+    p{margin:0 0 18px;color:#334155}
+    .btn{
+      display:inline-block;padding:12px 20px;border-radius:10px;border:0;
+      background:var(--accent);color:white;font-weight:600;cursor:pointer;font-size:15px;
+      text-decoration:none
+    }
+    .btn:active{transform:translateY(1px)}
+    .small{font-size:13px;color:#64748b;margin-top:14px}
+    @media (max-width:420px){.card{padding:20px}.avatar{width:80px;height:80px;line-height:80px}}
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="avatar" aria-hidden="true">JA</div>
+    <h1>Halo, saya Jesika Aprilia</h1>
+    <p>Selamat datang di halaman perkenalan sederhana ini. Klik tombol di bawah untuk menonton video pengantar.</p>
+
+    <!-- Tombol: ketika diklik akan membuka link video YouTube di tab baru -->
+    <button id="watchBtn" class="btn" type="button">Tonton Video</button>
+
+    <div class="small">Tekan tombol untuk membuka video di YouTube</div>
+  </main>
+
+  <script>
+    // Ganti nilai berikut dengan URL video YouTube yang kamu inginkan.
+    // Contoh: const videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+    const videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+
+    const btn = document.getElementById('watchBtn');
+    btn.addEventListener('click', function() {
+      // buka di tab baru (aman) dan fokus ke tab baru
+      const newWindow = window.open(videoUrl, '_blank', 'noopener,noreferrer');
+      if (newWindow) newWindow.focus();
+    });
+  </script>
+</body>
+</html>
